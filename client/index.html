@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/app.js" defer></script>
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Guestbook</title>
+  </head>
+  <body>
+    <header>
+      <div class="branding">
+        <h1>Havenvale</h1>
+        <p>campsite</p>
+      </div>
+      <nav class="nav-bar">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Guestbook</a>
+      </nav>
+    </header>
+    <main>
+      <div id="main-wrapper">
+        <section id="hero">
+          <h1 class="hero-heading">Guestbook</h1>
+          <img
+            class="hero-image"
+            src="./public/campsite-hero-small.jpg"
+            alt="sunset view of a mountain range out of a tent with a dog sleeping out the front "
+            srcset="
+              ./public/campsite-hero-small.jpg 300w,
+              ./public/campsite-hero-large.jpg 768w
+            "
+          />
+        </section>
+        <section id="leave-a-review">
+          <h2>Have you stayed with us?</h2>
+          <h3>We'd love to hear your feedback!</h3>
+          <form id="review-form">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" name="name" id="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="email" name="email" id="email" required min="0" />
+            </div>
+
+            <div class="form-group form-message">
+              <label for="message">Message:</label>
+              <textarea name="message" id="message" rows="3"></textarea>
+            </div>
+            <div class="form-scores">
+              <div class="form-group">
+                <label for="locationscore">Location:</label>
+                <select name="locationscore" id="locationscore" required>
+                  <option disabled value="" selected hidden>--</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 - Average</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10 - Excellent</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="valuescore">Value:</label>
+                <select name="valuescore" id="valuescore" required>
+                  <option disabled value="" selected hidden>--</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 - Average</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10 - Excellent</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="facilitiesscore">Facilities:</label>
+                <select name="facilitiesscore" id="facilitiesscore" required>
+                  <option disabled value="" selected hidden>--</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 - Average</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10 - Excellent</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cleanlinessscore">Cleanliness:</label>
+                <select name="cleanlinessscore" id="cleanlinessscore" required>
+                  <option disabled value="" selected hidden>--</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 - Average</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10 - Excellent</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="servicescore">Service:</label>
+                <select name="servicescore" id="servicescore" required>
+                  <option disabled value="" selected hidden>--</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5 - Average</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10 - Excellent</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+        <section id="section-reviews">
+          <h2>Reviews</h2>
+          <div id="reviews"></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>Created by Will Sparkes</p>
+    </footer>
+  </body>
+</html>
