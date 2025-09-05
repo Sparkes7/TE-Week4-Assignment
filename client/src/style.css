@@ -114,7 +114,7 @@ form {
   margin-top: 1rem;
   text-align: left;
   margin-inline: auto;
-  width: 80%;
+  width: 90%;
   display: grid;
   gap: 0.5rem;
   grid-template-columns: 1fr 1fr;
@@ -132,6 +132,9 @@ form {
   width: 100%;
   border-radius: 0.2rem;
   border: 1px solid black;
+}
+.form-group label {
+  font-size: 0.9rem;
 }
 
 .form-message {
@@ -196,6 +199,23 @@ form button {
   width: 70%;
   padding-right: 0.3rem;
 }
+.review-delete {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+.review-delete:hover {
+  background-color: black;
+  color: white;
+}
 .review-name {
   font-weight: 600;
   margin-bottom: 0.5rem;
@@ -203,6 +223,11 @@ form button {
 .review-message {
   font-size: 0.9rem;
   line-height: 1.25rem;
+}
+.like-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .score-bar {
@@ -260,7 +285,7 @@ form button {
   }
 
   #review-form {
-    width: 60%;
+    width: 70%;
   }
 
   #section-reviews h2 {

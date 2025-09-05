@@ -44,3 +44,10 @@ app.post("/add-review", express.json(), (request, response) => {
 app.delete("/delete-review", express.json(), (request, response) => {
   db.query(`DELETE FROM reviews WHERE id = $1`, [request.body.id]);
 });
+
+app.put("/like-review", express.json(), (request, response) => {
+  db.query(`UPDATE reviews SET reviewlikes = reviewlikes + $1 WHERE id = $2`, [
+    request.body.num,
+    request.body.id,
+  ]);
+});

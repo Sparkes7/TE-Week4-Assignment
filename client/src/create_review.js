@@ -1,4 +1,4 @@
-import { deleteReview } from "./app.js";
+import { deleteReview, likeReview } from "./app.js";
 const reviewsBox = document.getElementById("reviews");
 
 // constructor function in charge of handling the creation of each review
@@ -10,7 +10,8 @@ export function CreateReview(
   valuescore,
   facilitiesscore,
   cleanlinessscore,
-  servicescore
+  servicescore,
+  reviewlikes
 ) {
   const review = document.createElement("div");
   review.classList.add("review-container");
@@ -28,6 +29,31 @@ export function CreateReview(
   pMessage.classList.add("review-message");
   pMessage.textContent = message;
   reviewContent.appendChild(pMessage);
+
+  const likesContainer = document.createElement("div");
+  likesContainer.classList.add("like-container");
+
+  const pLikes = document.createElement("p");
+  pLikes.classList.add("like-number");
+  pLikes.textContent = "Likes: " + reviewlikes;
+  reviewContent.appendChild(pLikes);
+
+  const likeButton = document.createElement("button");
+  likeButton.textContent = "Like Review";
+  likeButton.classList.add("review-button");
+  likeButton.addEventListener("click", () => {
+    likeReview(1, id);
+  });
+  const dislikeButton = document.createElement("button");
+  dislikeButton.textContent = "Dislike Review";
+  dislikeButton.classList.add("review-button");
+  dislikeButton.addEventListener("click", () => {
+    likeReview(-1, id);
+  });
+  likesContainer.appendChild(pLikes);
+  likesContainer.appendChild(likeButton);
+  likesContainer.appendChild(dislikeButton);
+  reviewContent.appendChild(likesContainer);
 
   // Location score
   const locScoreGroup = document.createElement("div");
@@ -180,10 +206,8 @@ export function CreateReview(
   reviewScores.appendChild(overallScore);
 
   const deleteButton = document.createElement("div");
-  deleteButton.style.width = "20px";
-  deleteButton.style.height = "20px";
-  deleteButton.style.backgroundColor = "red";
-  deleteButton.style.alignSelf = "start";
+  deleteButton.classList.add("review-delete");
+  deleteButton.textContent = "X";
 
   deleteButton.addEventListener("click", () => {
     deleteReview(id);
@@ -192,5 +216,5 @@ export function CreateReview(
   review.appendChild(reviewContent);
   review.appendChild(reviewScores);
   review.appendChild(deleteButton);
-  reviewsBox.appendChild(review);
+  reviewsBox.prepend(review);
 }

@@ -9,15 +9,19 @@ function handleSumbit(e) {
 
   const formData = new FormData(reviewForm);
   const formValues = Object.fromEntries(formData);
+  reviewForm.reset();
 
-  fetch("https://havenvale-guestbook.onrender.com/add-review", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ formValues }),
-  });
-  //window.location.reload();
+  const response = fetch(
+    "https://havenvale-guestbook.onrender.com/add-review",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formValues }),
+    }
+  );
+  response.then(window.location.reload());
 }
 
 async function getReviews() {
@@ -47,20 +51,39 @@ async function initReviews() {
       review.valuescore,
       review.facilitiesscore,
       review.cleanlinessscore,
-      review.servicescore
+      review.servicescore,
+      review.reviewlikes
     );
   }
 }
 initReviews();
 
-export async function deleteReview(id) {
-  console.log(id);
-  fetch("https://havenvale-guestbook.onrender.com/delete-review", {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ id }),
-  });
-  window.location.reload();
+export function deleteReview(id) {
+  console.log("deleting post: " + id);
+  const response = fetch(
+    "https://havenvale-guestbook.onrender.com/delete-review",
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    }
+  );
+  response.then(window.location.reload());
+}
+
+export function likeReview(num, id) {
+  console.log("liking post: " + id);
+  const response = fetch(
+    "https://havenvale-guestbook.onrender.com/like-review",
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ num, id }),
+    }
+  );
+  response.then(window.location.reload());
 }

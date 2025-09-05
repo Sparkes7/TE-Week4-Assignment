@@ -26,7 +26,8 @@ async function initReviews() {
       review.valuescore,
       review.facilitiesscore,
       review.cleanlinessscore,
-      review.servicescore
+      review.servicescore,
+      review.reviewlikes
     );
   }
 }
@@ -53,14 +54,12 @@ For my form i've decided to collect scores of various aspects of the grounds so 
 
 # Resources
 
-[W3Schools Constructor Functions](https://www.w3schools.com/js/js_object_constructors.asp)
-
-[DELETE method request](https://stackoverflow.com/questions/40284338/javascript-fetch-delete-and-put-requests)
-
+[W3Schools: Constructor Functions](https://www.w3schools.com/js/js_object_constructors.asp)
+[Stack Overflow: DELETE method request](https://stackoverflow.com/questions/40284338/javascript-fetch-delete-and-put-requests)
 [DELETE method request 2](https://blog.stackademic.com/demystifying-fetch-a-guide-to-get-post-patch-and-delete-da8514f041e4)
-
-[score bar inspiration](https://www.pitchup.com/campsites/England/North_East/North_Yorkshire/Skipton/draughton-heights-campsite/)
-
-[HTML dropdown select option](https://www.w3schools.com/tags/tag_select.asp)
-
-[HTML dropdown validation](https://stackoverflow.com/a/44638785)
+[Pitchup: score bar inspiration](https://www.pitchup.com/campsites/England/North_East/North_Yorkshire/Skipton/draughton-heights-campsite/)
+[W3Schools: HTML dropdown select option](https://www.w3schools.com/tags/tag_select.asp)
+[Stack Overflow: HTML dropdown validation](https://stackoverflow.com/a/44638785)
+[Stack Overflow: Updating a column](https://stackoverflow.com/questions/19370088/how-to-add-plus-one-1-to-a-sql-server-column-in-a-sql-query)
+[W3Schools: Adding a column to a table using SQL](https://www.w3schools.com/sql/sql_alter.asp)
+[W3Schools: Promises, and the "then" function](https://www.w3schools.com/js/js_promise.asp)
