@@ -146,12 +146,12 @@ export function CreateReview(
   servScoreBar.classList.add("score-bar");
   const servScoreFilled = document.createElement("div");
   servScoreFilled.classList.add("score-bar-filled");
-  servScoreFilled.style.width = cleanlinessscore + "0%";
+  servScoreFilled.style.width = servicescore + "0%";
 
   servScoreBar.appendChild(servScoreFilled);
 
   const pServScore = document.createElement("p");
-  pServScore.textContent = cleanlinessscore + "/10";
+  pServScore.textContent = servicescore + "/10";
   pServScore.classList.add("score-number");
 
   servScoreGroup.appendChild(servLabel);

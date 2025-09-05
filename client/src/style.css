@@ -235,14 +235,22 @@ form button {
 @media (min-width: 768px) {
   #main-wrapper {
     width: 80%;
-    border-left: 2px solid #b7d957;
-    border-right: 2px solid #b7d957;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
   }
   .hero-heading {
     font-size: 4rem;
     display: none;
   }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 15%;
+  }
+
   #review-form {
     width: 60%;
   }

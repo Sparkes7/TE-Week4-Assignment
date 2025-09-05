@@ -38,7 +38,7 @@ async function initReviews() {
   const reviews = await getReviews();
   console.log(reviews);
 
-  for (let review of reviews) {
+  for (const review of reviews) {
     new CreateReview(
       review.name,
       review.message,
