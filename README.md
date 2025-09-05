@@ -45,6 +45,12 @@ I got inspiration for 'score bars' next to a review by looking at other websites
 When inspecting the page I could see that each bar had it's width set as a percentage which made replicating this quite simple. Since the rating system is out of 10, a score of 10 would be 100%, and therefore a score of 7 would be 70%. Taking the review score and appending "0%" to the end of the value would give me the width size that it would need to be.
 setting the width as a percentage of the bar
 
+## Design Principles - Ease of use
+
+When thinking about who would use this website, particularly this page, it's because a user may make a review of their own, but also to serve as a testimony page of sorts for potential customers. In my own experience when looking for campsites, the things that I value to determine if it's right for me are different to other peoples values. For example, I don't particularly care about the campground facilities, as long as it's in a great location, whereas others really depend on these facilities for various reasons. Reviews are very opinionated, and some users looking at campsites often don't care about the ramblings, they just want quick numbers to compare.
+
+For my form i've decided to collect scores of various aspects of the grounds so that the customers can pick out the data that they want without having to scour the review text if they don't want to. Often times when people are looking for campsites, they have many tabs open and if they can't get a quick 'vibe check' they might just close out.
+
 # Resources
 
 [W3Schools Constructor Functions](https://www.w3schools.com/js/js_object_constructors.asp)

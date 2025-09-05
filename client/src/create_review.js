@@ -165,6 +165,18 @@ export function CreateReview(
   reviewScores.appendChild(cleanScoreGroup);
   reviewScores.appendChild(servScoreGroup);
 
+  const overallScore = document.createElement("strong");
+  overallScore.classList.add("overall-score");
+  overallScore.textContent =
+    "Overall: " +
+    (locationscore +
+      valuescore +
+      facilitiesscore +
+      cleanlinessscore +
+      servicescore) /
+      5;
+  reviewScores.appendChild(overallScore);
+
   review.appendChild(reviewContent);
   review.appendChild(reviewScores);
   reviewsBox.appendChild(review);

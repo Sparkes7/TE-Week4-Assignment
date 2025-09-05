@@ -235,6 +235,10 @@ form button {
   font-weight: 500;
   display: none;
 }
+.overall-score {
+  margin-top: 0.5rem;
+  text-align: center;
+}
 
 @media (min-width: 768px) {
   #main-wrapper {
@@ -288,6 +292,10 @@ form button {
     padding-left: 0.5rem;
     width: 20%;
     display: block;
+  }
+  .overall-score {
+    text-align: right;
+    padding-right: 3rem;
   }
 
   .form-scores {
