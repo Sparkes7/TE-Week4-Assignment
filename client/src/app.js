@@ -22,6 +22,7 @@ function handleSumbit(e) {
       body: JSON.stringify({ formValues, reviewlikes }),
     }
   );
+  setTimeout(initReviews, 500);
 }
 
 async function getReviews() {
@@ -60,30 +61,23 @@ initReviews();
 
 export function deleteReview(id) {
   console.log("deleting post: " + id);
-  const response = fetch(
-    "https://havenvale-guestbook.onrender.com/delete-review",
-    {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id }),
-    }
-  );
-  //response.then(window.location.reload());
+  fetch("https://havenvale-guestbook.onrender.com/delete-review", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+  });
+  setTimeout(initReviews, 500);
 }
 
 export async function likeReview(id) {
   console.log("liking post: " + id);
-  const response = await fetch(
-    "https://havenvale-guestbook.onrender.com/like-review",
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id }),
-    }
-  );
-  //response.then(window.location.reload());
+  await fetch("https://havenvale-guestbook.onrender.com/like-review", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+  });
 }
