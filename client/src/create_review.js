@@ -35,7 +35,7 @@ export function CreateReview(
 
   const pLikes = document.createElement("p");
   pLikes.classList.add("like-number");
-  pLikes.textContent = "Likes: " + reviewlikes;
+  pLikes.textContent = `Likes: ${reviewlikes}`;
   reviewContent.appendChild(pLikes);
 
   const likeButton = document.createElement("button");
@@ -43,6 +43,9 @@ export function CreateReview(
   likeButton.classList.add("review-button");
   likeButton.addEventListener("click", () => {
     likeReview(id);
+    likeButton.disabled = true;
+    likeButton.textContent = "Liked!";
+    pLikes.textContent = `Likes: ${reviewlikes + 1}`;
   });
   likesContainer.appendChild(pLikes);
   likesContainer.appendChild(likeButton);

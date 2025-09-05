@@ -24,8 +24,8 @@ app.get("/reviews", async (request, response) => {
 app.post("/add-review", express.json(), (request, response) => {
   const newReview = request.body;
   const query = db.query(
-    `INSERT INTO reviews (name, email, message, locationscore, valuescore, facilitiesscore, cleanlinessscore, servicescore)
-    VALUES($1, $2, $3, $4, $5, $6, $7, $8)`,
+    `INSERT INTO reviews (name, email, message, locationscore, valuescore, facilitiesscore, cleanlinessscore, servicescore, reviewlikes)
+    VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
     [
       newReview.formValues.name,
       newReview.formValues.email,
@@ -36,6 +36,7 @@ app.post("/add-review", express.json(), (request, response) => {
       newReview.formValues.facilitiesscore,
       newReview.formValues.cleanlinessscore,
       newReview.formValues.servicescore,
+      newReview.reviewlikes,
     ]
   );
   response.json(query);
@@ -46,7 +47,7 @@ app.delete("/delete-review", express.json(), (request, response) => {
 });
 
 app.put("/like-review", express.json(), (request, response) => {
-  db.query(`UPDATE reviews SET reviewlikes = reviewlikes + $1 WHERE id = $2`, [
+  db.query(`UPDATE reviews SET reviewlikes = reviewlikes + 1 WHERE id = $1`, [
     request.body.id,
   ]);
 });

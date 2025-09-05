@@ -10,6 +10,7 @@ function handleSumbit(e) {
   const formData = new FormData(reviewForm);
   const formValues = Object.fromEntries(formData);
   reviewForm.reset();
+  const reviewlikes = 0; // this isn't data we're collecting, but we want to initialise this as 0 so that it isn't entered as NULL in our database table
 
   const response = fetch(
     "https://havenvale-guestbook.onrender.com/add-review",
@@ -18,7 +19,7 @@ function handleSumbit(e) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ formValues }),
+      body: JSON.stringify({ formValues, reviewlikes }),
     }
   );
   response.then(window.location.reload());
@@ -73,13 +74,17 @@ export function deleteReview(id) {
   response.then(window.location.reload());
 }
 
-export function likeReview(id) {
+export async function likeReview(id) {
   console.log("liking post: " + id);
-  fetch("https://havenvale-guestbook.onrender.com/like-review", {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ id }),
-  });
+  const response = await fetch(
+    "https://havenvale-guestbook.onrender.com/like-review",
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    }
+  );
+  response.then(window.location.reload());
 }
