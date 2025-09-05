@@ -17,7 +17,7 @@ function handleSumbit(e) {
     },
     body: JSON.stringify({ formValues }),
   });
-  // window.location.reload();
+  window.location.reload();
 }
 
 async function getReviews() {
