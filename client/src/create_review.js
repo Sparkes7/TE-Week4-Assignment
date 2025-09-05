@@ -46,7 +46,6 @@ export function CreateReview(
   });
   likesContainer.appendChild(pLikes);
   likesContainer.appendChild(likeButton);
-  likesContainer.appendChild(dislikeButton);
   reviewContent.appendChild(likesContainer);
 
   // Location score
