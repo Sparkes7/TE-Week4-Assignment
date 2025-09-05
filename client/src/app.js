@@ -10,14 +10,14 @@ function handleSumbit(e) {
   const formData = new FormData(reviewForm);
   const formValues = Object.fromEntries(formData);
 
-  fetch("http://localhost:8080/add-review", {
+  fetch("https://havenvale-guestbook.onrender.com/add-review", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ formValues }),
   });
-  window.location.reload();
+  // window.location.reload();
 }
 
 async function getReviews() {
