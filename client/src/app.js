@@ -73,7 +73,7 @@ export function deleteReview(id) {
   response.then(window.location.reload());
 }
 
-export async function likeReview(id) {
+export function likeReview(id) {
   console.log("liking post: " + id);
   fetch("https://havenvale-guestbook.onrender.com/like-review", {
     method: "PUT",
