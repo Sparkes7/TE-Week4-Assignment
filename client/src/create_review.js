@@ -42,13 +42,7 @@ export function CreateReview(
   likeButton.textContent = "Like Review";
   likeButton.classList.add("review-button");
   likeButton.addEventListener("click", () => {
-    likeReview(1, id);
-  });
-  const dislikeButton = document.createElement("button");
-  dislikeButton.textContent = "Dislike Review";
-  dislikeButton.classList.add("review-button");
-  dislikeButton.addEventListener("click", () => {
-    likeReview(-1, id);
+    likeReview(id);
   });
   likesContainer.appendChild(pLikes);
   likesContainer.appendChild(likeButton);

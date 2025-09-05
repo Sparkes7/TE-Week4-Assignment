@@ -73,17 +73,13 @@ export function deleteReview(id) {
   response.then(window.location.reload());
 }
 
-export function likeReview(num, id) {
+export async function likeReview(id) {
   console.log("liking post: " + id);
-  const response = fetch(
-    "https://havenvale-guestbook.onrender.com/like-review",
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ num, id }),
-    }
-  );
-  response.then(window.location.reload());
+  fetch("https://havenvale-guestbook.onrender.com/like-review", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+  });
 }
