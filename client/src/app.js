@@ -12,19 +12,24 @@ function handleSumbit(e) {
   reviewForm.reset();
   const reviewlikes = 0; // this isn't data we're collecting, but we want to initialise this as 0 so that it isn't entered as NULL in our database table
 
-  const response = fetch("http://localhost:8080/add-review", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ formValues, reviewlikes }),
-  });
+  const response = fetch(
+    "https://havenvale-guestbook.onrender.com/add-review",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ formValues, reviewlikes }),
+    }
+  );
   setTimeout(initReviews, 500);
 }
 
 async function getReviews() {
   try {
-    const response = await fetch("http://localhost:8080/reviews");
+    const response = await fetch(
+      "https://havenvale-guestbook.onrender.com/reviews"
+    );
     if (response.ok) {
       const data = await response.json();
       return data;
@@ -57,7 +62,7 @@ initReviews();
 
 export function deleteReview(id) {
   console.log("deleting post: " + id);
-  fetch("http://localhost:8080/delete-review", {
+  fetch("https://havenvale-guestbook.onrender.com/delete-review", {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +74,7 @@ export function deleteReview(id) {
 
 export async function likeReview(id) {
   console.log("liking post: " + id);
-  await fetch("http://localhost:8080/like-review", {
+  await fetch("https://havenvale-guestbook.onrender.com/like-review", {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
