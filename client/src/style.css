@@ -124,6 +124,10 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.required {
+  color: rgb(145, 0, 0);
+}
 .form-group input {
   width: 100%;
   border-radius: 0.2rem;
@@ -254,6 +258,12 @@ form button {
   #review-form {
     width: 60%;
   }
+
+  #section-reviews h2 {
+    margin: 2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
   .score-group {
     flex-direction: row;
   }
@@ -263,6 +273,7 @@ form button {
   }
   .review-content {
     width: 60%;
+    padding-left: 2rem;
   }
   .review-scores {
     width: 40%;
