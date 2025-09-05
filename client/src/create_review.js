@@ -212,5 +212,5 @@ export function CreateReview(
   review.appendChild(reviewContent);
   review.appendChild(reviewScores);
   review.appendChild(deleteButton);
-  reviewsBox.prepend(review);
+  reviewsBox.appendChild(review);
 }
