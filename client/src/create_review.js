@@ -1,3 +1,4 @@
+import { deleteReview } from "./app.js";
 const reviewsBox = document.getElementById("reviews");
 
 // constructor function in charge of handling the creation of each review
@@ -192,15 +193,4 @@ export function CreateReview(
   review.appendChild(reviewScores);
   review.appendChild(deleteButton);
   reviewsBox.appendChild(review);
-}
-
-async function deleteReview(id) {
-  console.log(id);
-  fetch("http://localhost:8080/delete-review", {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ id }),
-  });
 }

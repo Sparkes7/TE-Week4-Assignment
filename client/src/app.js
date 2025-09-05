@@ -52,3 +52,15 @@ async function initReviews() {
   }
 }
 initReviews();
+
+export async function deleteReview(id) {
+  console.log(id);
+  fetch("https://havenvale-guestbook.onrender.com/delete-review", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+  });
+  window.location.reload();
+}

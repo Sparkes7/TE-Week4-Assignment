@@ -42,5 +42,5 @@ app.post("/add-review", express.json(), (request, response) => {
 });
 
 app.delete("/delete-review", express.json(), (request, response) => {
-  db.query(`DELETE FROM reviews WHERE id = $1`, [request.body.reviewID]);
+  db.query(`DELETE FROM reviews WHERE id = $1`, [request.body.id]);
 });
