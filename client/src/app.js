@@ -22,7 +22,6 @@ function handleSumbit(e) {
       body: JSON.stringify({ formValues, reviewlikes }),
     }
   );
-  response.then(window.location.reload());
 }
 
 async function getReviews() {
@@ -71,7 +70,7 @@ export function deleteReview(id) {
       body: JSON.stringify({ id }),
     }
   );
-  response.then(window.location.reload());
+  //response.then(window.location.reload());
 }
 
 export async function likeReview(id) {
@@ -86,5 +85,5 @@ export async function likeReview(id) {
       body: JSON.stringify({ id }),
     }
   );
-  response.then(window.location.reload());
+  //response.then(window.location.reload());
 }
