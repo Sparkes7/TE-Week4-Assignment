@@ -40,6 +40,7 @@ async function initReviews() {
 
   for (const review of reviews) {
     new CreateReview(
+      review.id,
       review.name,
       review.message,
       review.locationscore,

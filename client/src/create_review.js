@@ -2,6 +2,7 @@ const reviewsBox = document.getElementById("reviews");
 
 // constructor function in charge of handling the creation of each review
 export function CreateReview(
+  id,
   name,
   message,
   locationscore,
@@ -177,7 +178,29 @@ export function CreateReview(
       5;
   reviewScores.appendChild(overallScore);
 
+  const deleteButton = document.createElement("div");
+  deleteButton.style.width = "20px";
+  deleteButton.style.height = "20px";
+  deleteButton.style.backgroundColor = "red";
+  deleteButton.style.alignSelf = "start";
+
+  deleteButton.addEventListener("click", () => {
+    deleteReview(id);
+  });
+
   review.appendChild(reviewContent);
   review.appendChild(reviewScores);
+  review.appendChild(deleteButton);
   reviewsBox.appendChild(review);
+}
+
+async function deleteReview(id) {
+  console.log(id);
+  fetch("http://localhost:8080/delete-review", {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id }),
+  });
 }

@@ -40,3 +40,7 @@ app.post("/add-review", express.json(), (request, response) => {
   );
   response.json(query);
 });
+
+app.delete("/delete-review", express.json(), (request, response) => {
+  db.query(`DELETE FROM reviews WHERE id = $1`, [request.body.reviewID]);
+});
