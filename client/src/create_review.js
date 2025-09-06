@@ -40,7 +40,7 @@ export function CreateReview(
 
   const likeButton = document.createElement("button");
   likeButton.textContent = "Like Review";
-  likeButton.classList.add("review-button");
+  likeButton.classList.add("like-button");
   likeButton.addEventListener("click", () => {
     likeReview(id);
     likeButton.disabled = true;
@@ -201,8 +201,9 @@ export function CreateReview(
       5;
   reviewScores.appendChild(overallScore);
 
-  const deleteButton = document.createElement("div");
+  const deleteButton = document.createElement("button");
   deleteButton.classList.add("review-delete");
+  deleteButton.setAttribute("aria-label", "Delete review");
   deleteButton.textContent = "X";
 
   deleteButton.addEventListener("click", () => {

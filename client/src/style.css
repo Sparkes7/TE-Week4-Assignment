@@ -42,16 +42,21 @@ footer {
 .nav-bar {
   padding: 0.5rem 0rem;
   display: flex;
-  gap: 1rem;
+  gap: 0.2rem;
 }
 
 .nav-bar a {
   text-decoration: none;
   color: #0e0e0e;
   font-weight: 600;
+  padding: 0.5rem 1rem;
 }
-.nav-bar a:hover {
+.nav-bar a:hover,
+.nav-bar a:focus,
+.nav-bar a:active {
   text-decoration: underline;
+}
+.nav-bar a:active {
 }
 
 #main-wrapper {
@@ -95,12 +100,10 @@ footer {
 }
 
 #leave-a-review h2 {
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.4rem;
   margin-bottom: 0.3rem;
   text-transform: uppercase;
-  letter-spacing: -0.1rem;
-  word-spacing: 0.3rem;
 }
 
 #leave-a-review h3 {
@@ -127,6 +130,7 @@ form {
 
 .required {
   color: rgb(145, 0, 0);
+  font-weight: bold;
 }
 .form-group input {
   width: 100%;
@@ -207,13 +211,16 @@ form button {
   width: 1.5rem;
   height: 1.5rem;
   border: 1px solid black;
+  background-color: white;
+  color: black;
   border-radius: 50%;
   font-size: 1rem;
   font-weight: 700;
   margin-left: 0.5rem;
 }
-.review-delete:hover {
-  background-color: black;
+.review-delete:hover,
+.review-delete:focus {
+  background-color: red;
   color: white;
 }
 .review-name {
@@ -225,17 +232,37 @@ form button {
   line-height: 1.25rem;
 }
 .like-container {
+  margin-top: 1.5rem;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: flex-end;
+  align-items: center;
   gap: 1rem;
+}
+.like-button {
+  background-color: #e0e0e0;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}
+.like-button:hover,
+.like-button:focus {
+  background-color: #b7d957;
+  color: black;
+}
+.like-button:disabled {
+  background-color: #b7d957;
+  color: #000;
 }
 
 .score-bar {
   height: 0.5rem;
   width: 100%;
-  background-color: #b4b4b4;
+  background-color: #e0e0e0;
   border-radius: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 .score-bar-filled {
   background-color: #b7d957;
