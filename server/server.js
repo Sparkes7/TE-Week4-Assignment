@@ -17,7 +17,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/reviews", async (request, response) => {
-  const query = await db.query(`SELECT * FROM reviews`);
+  const query = await db.query(`SELECT * FROM reviews ORDER BY id ASC`);
   response.json(query.rows);
 });
 
