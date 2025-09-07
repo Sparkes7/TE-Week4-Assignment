@@ -36,6 +36,7 @@ export function CreateReview(
   const pLikes = document.createElement("p");
   pLikes.classList.add("like-number");
   pLikes.textContent = `Likes: ${reviewlikes}`;
+  pLikes.setAttribute("aria-live", "polite");
   reviewContent.appendChild(pLikes);
 
   const likeButton = document.createElement("button");
